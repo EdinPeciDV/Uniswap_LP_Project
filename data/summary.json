@@ -1,0 +1,32 @@
+{
+  "period_start": "2025-09-24 09:59:59",
+  "period_end": "2026-09-24 09:59:59",
+  "eth_start": 4183.218712588859,
+  "eth_end": 2640.895342321697,
+  "eth_return": -0.3686929793141672,
+  "eth_realized_vol": 0.6100877333342116,
+  "breakeven_fee_apr_full_range": 0.046525880295609515,
+  "mean_funding_apr": 0.0624829136,
+  "fee_switch_between": [
+    "2025-12-27 19:58:59",
+    "2025-12-27 20:58:59"
+  ],
+  "fee_switch_blocks": [
+    24106208,
+    24106506
+  ],
+  "fees_lost_to_protocol_fee": {
+    "Full range": 500.9019732879992,
+    "\u00b150% static": 325.2661078658639,
+    "\u00b120% static": 0.0,
+    "\u00b110% static": 0.0,
+    "\u00b150% rebalanced": 2359.013191614624,
+    "\u00b120% rebalanced": 4457.20422711533,
+    "\u00b110% rebalanced": 5179.2344282474005,
+    "\u00b15% rebalanced": 5206.159370357673,
+    "Full range, hedged": 500.9019732879992,
+    "\u00b150% rebal., hedged": 2359.013191614624,
+    "\u00b120% rebal., hedged": 4457.20422711533,
+    "\u00b110% rebal., hedged": 5179.2344282474005
+  }
+}
