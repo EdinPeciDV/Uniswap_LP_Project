@@ -1,0 +1,15 @@
+{
+  "pool": "0x88e6A0c2dDD26FEEb64F039a2c41296FcB3f5640",
+  "from_block": 26038032,
+  "to_block": 26047032,
+  "swaps": 8390,
+  "breakdown": {
+    "exact_in_match": 7107,
+    "crossed initialized tick(s)": 779,
+    "exact_out_match": 216,
+    "price_limit_match": 162,
+    "skipped: unknown pre-state": 126
+  },
+  "single_tick_swaps_replayed": 7485,
+  "bit_exact_match_rate": 1.0
+}
