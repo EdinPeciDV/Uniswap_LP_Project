@@ -2,6 +2,8 @@
 
 **Is providing liquidity on Uniswap actually profitable once you strip out the ETH bet?**
 
+**Live results page: https://edinpecidv.github.io/Uniswap_LP_Project/** (interactive charts, sortable table, range-width explorer)
+
 This project rebuilds the Uniswap v2 and v3 swap math from the Solidity
 contracts and checks it against real mainnet swaps, where it matches exactly.
 It then backtests 13 liquidity-provider strategies over a full year of hourly
@@ -159,6 +161,8 @@ scripts/
   verify_v3_swaps.py   replay recent v3 swaps bit for bit
   fetch_data.py        download one year of hourly pool state + funding
   run_backtest.py      run all strategies, write data/results.* and figures/
+  build_site.py        build the interactive results page into docs/index.html
+docs/                  static site (GitHub Pages / Vercel), data inlined
 tests/                 76 tests, including real mainnet swaps as fixtures
 ```
 
@@ -168,6 +172,7 @@ tests/                 76 tests, including real mainnet swaps as fixtures
 pip install -r requirements.txt
 pytest                              # 76 tests, offline
 python scripts/run_backtest.py      # uses the committed data/
+python scripts/build_site.py        # rebuilds docs/index.html from the same data
 python scripts/verify_v3_swaps.py   # needs internet: replays the latest ~9k blocks
 python scripts/fetch_data.py        # needs internet: refreshes the year of data (~4 min)
 ```
