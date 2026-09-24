@@ -64,9 +64,16 @@ def fetch_hyperliquid_funding(start_ms: int, end_ms: int, coin: str = "ETH") -> 
     """Hourly funding rates for the Hyperliquid ETH perp (positive = longs pay shorts)."""
     out, cursor = [], start_ms
     while cursor < end_ms:
-        r = requests.post("https://api.hyperliquid.xyz/info", timeout=30,
-                          json={"type": "fundingHistory", "coin": coin, "startTime": cursor, "endTime": end_ms})
-        r.raise_for_status()
+        for attempt in range(5):
+            try:
+                r = requests.post("https://api.hyperliquid.xyz/info", timeout=30,
+                                  json={"type": "fundingHistory", "coin": coin, "startTime": cursor, "endTime": end_ms})
+                r.raise_for_status()
+                break
+            except requests.RequestException:
+                if attempt == 4:
+                    raise
+                time.sleep(2 * 2**attempt)
         batch = r.json()
         if not batch:
             break
